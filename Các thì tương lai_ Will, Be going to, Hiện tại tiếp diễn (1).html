@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Các thì tương lai: Will, Be going to, Hiện tại tiếp diễn</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@500;600;800&display=swap">
+<style>
+:root{--pa:#efe6d6;--ink:#25201e;--red:#d3382c;--card:#f8f1e4;--mut:#6b5f58;--soft:rgba(211,56,44,.12);--ok:#1f7a4d;--okbg:#d9efdf;--no:#b3261e;--nobg:#f8d9d4;--pet:#f1a9b3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--pa:#1c1918;--ink:#f1e8d8;--red:#ef5a4a;--card:#272221;--mut:#b9aca0;--soft:rgba(239,90,74,.16);--ok:#6fdca0;--okbg:#1c3a2a;--no:#ff8a7d;--nobg:#432320;--pet:#b86a78}}
+:root[data-theme="dark"]{--pa:#1c1918;--ink:#f1e8d8;--red:#ef5a4a;--card:#272221;--mut:#b9aca0;--soft:rgba(239,90,74,.16);--ok:#6fdca0;--okbg:#1c3a2a;--no:#ff8a7d;--nobg:#432320;--pet:#b86a78}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden}
+body{font-family:"Be Vietnam Pro","Segoe UI",system-ui,sans-serif;font-weight:500;color:var(--ink);background:var(--pa);line-height:1.55;position:relative}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.3;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E")}
+.px{position:fixed;z-index:0;pointer-events:none;transition:transform .15s linear}
+.sun{width:min(46vw,300px);aspect-ratio:1;left:-9%;top:-6%;border-radius:50%;background:linear-gradient(90deg,var(--red) 50%,#34302e 50%);transform:rotate(-35deg);opacity:.9}
+.sun::before,.sun::after{content:"";position:absolute;left:25%;width:50%;aspect-ratio:1;border-radius:50%}
+.sun::before{top:0;background:var(--red)}.sun::after{bottom:0;background:#34302e}
+.fl{width:150px;right:-20px;top:50px;color:var(--pet)}.fl svg{width:100%;animation:sw 10s ease-in-out infinite}
+.fl.b{width:90px;right:18%;top:auto;bottom:16%}
+.wv{right:0;bottom:0;width:260px;height:130px;opacity:.5;-webkit-mask:linear-gradient(135deg,transparent 30%,#000);mask:linear-gradient(135deg,transparent 30%,#000);background:radial-gradient(circle at 50% 100%,transparent 36%,var(--red) 37% 42%,transparent 43% 55%,var(--red) 56% 61%,transparent 62%) 0 0/52px 26px}
+@keyframes sw{50%{transform:rotate(8deg) translateY(-10px)}}
+.petal{position:fixed;z-index:0;top:-20px;width:12px;height:12px;background:var(--pet);border-radius:100% 0 100% 0;pointer-events:none;opacity:.8;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(540deg)}}
+#deck{position:relative;z-index:2;display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+#deck::-webkit-scrollbar{display:none}
+.slide{min-width:100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;overflow-y:auto;padding:64px 16px 92px;display:flex;justify-content:center;align-items:flex-start}
+.wrap{width:100%;max-width:940px;display:flex;flex-direction:column;gap:14px}
+.wrap.mid{margin:auto 0}
+.hd{display:flex;gap:14px;align-items:stretch;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.vt{writing-mode:vertical-rl;transform:rotate(180deg);font-family:Anton,Impact,sans-serif;color:var(--red);letter-spacing:.14em;font-size:18px;line-height:1}
+.ti{font-family:Anton,Impact,"Arial Narrow",sans-serif;text-transform:uppercase;color:var(--red);line-height:.92;letter-spacing:.01em;font-size:clamp(52px,12vw,110px);filter:url(#rough)}
+.ti.sm{font-size:clamp(40px,9vw,84px)}
+.hd p{font-weight:600;color:var(--mut);font-size:15px;margin-top:6px}
+.hd>div:nth-child(2){flex:1}
+.stamp{align-self:flex-start;background:var(--red);color:#fff;font-weight:800;font-size:18px;padding:8px 10px;line-height:1.1;border:2px solid var(--red);outline:2px solid var(--red);outline-offset:2px}
+.slide.in .ti{animation:st .6s both}.slide.in .stamp{animation:sp .7s .3s both}
+@keyframes st{from{opacity:0;transform:scale(1.2) rotate(-2deg)}}
+@keyframes sp{from{opacity:0;transform:scale(2) rotate(14deg)}}
+.slide .a{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+.slide.in .a{opacity:1;transform:none;transition-delay:calc(var(--i,0)*80ms)}
+.lead{font-size:clamp(16px,2.4vw,19px);max-width:64ch}
+.cds{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.cd{background:var(--card);border:2px solid var(--ink);padding:14px 16px;position:relative}
+.cd h3{font-size:18px;font-weight:800;margin-bottom:4px}
+.cd p{color:var(--mut);font-size:15px}.cd b{color:var(--ink)}
+.cd.rd h3{background:var(--red);color:#fff;margin:-14px -16px 10px;padding:9px 16px;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:24px;letter-spacing:.03em;text-transform:uppercase}
+.ex{border-left:4px solid var(--red);padding:2px 10px;margin:8px 0 2px;font-weight:600;color:var(--ink);font-size:15px}
+.ex small{display:block;color:var(--mut);font-weight:500;font-size:13px}
+.tag{display:inline-block;border:1.5px solid var(--red);color:var(--red);padding:1px 10px;font-weight:700;font-size:14px;margin:3px 5px 3px 0}
+.tg{display:inline-block;color:#fff;font-weight:800;font-size:13px;padding:1px 9px;margin-right:6px;background:var(--red)}
+.tg.G{background:#34302e}.tg.H{background:var(--ok)}
+.t2{border:2px solid var(--ink);background:var(--card)}
+.t2 .r{display:grid;grid-template-columns:1fr 2fr 2fr;gap:10px;padding:10px 14px;border-top:2px solid var(--ink)}
+.t2 .r:first-child{border:0;background:var(--red);color:#fff;font-weight:800}
+.t2 .r b{color:var(--red)}.t2 .r:first-child b{color:#fff}
+.btn{font:inherit;font-weight:800;cursor:pointer;background:var(--red);color:#fff;border:2px solid var(--ink);padding:10px 22px;font-size:16px;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn.g{background:var(--card);color:var(--ink)}
+.btn:focus-visible,.dot:focus-visible,.opt:focus-visible,.chip:focus-visible,input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.lg{font-size:13px;color:var(--mut);display:flex;gap:14px;flex-wrap:wrap}
+.lg i{display:inline-block;vertical-align:middle;margin-right:5px}
+.d1{width:12px;height:12px;border-radius:50%;background:var(--red)}.d2{width:10px;height:10px;background:var(--ink);transform:rotate(45deg)}.d3{width:2px;height:14px;background:var(--ink)}
+.row{background:var(--card);border:2px solid var(--ink);padding:12px 14px;display:grid;grid-template-columns:170px 1fr;gap:4px 18px;transition:transform .25s,box-shadow .25s,background .25s}
+.row.hit{box-shadow:7px 7px 0 var(--red);transform:translate(-3px,-3px);background:var(--soft)}
+.rh b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:26px;color:var(--red);display:block;line-height:1.05;text-transform:uppercase}
+.rh span{font-size:13px;color:var(--mut);font-weight:600}
+.tl{position:relative;height:34px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:16px;height:2px;background:var(--mut);opacity:.5}
+.dec{position:absolute;top:9px;width:16px;height:16px;border-radius:50%;background:var(--red);margin-left:-8px;z-index:2}
+.now{position:absolute;left:50%;top:4px;bottom:0;width:2px;background:var(--ink)}
+.now::after{content:"NOW";position:absolute;top:-4px;left:5px;font-size:10px;font-weight:800}
+.evt{position:absolute;left:92%;top:10px;width:14px;height:14px;background:var(--ink);transform:rotate(45deg)}
+.fb2{position:absolute;top:15px;height:4px;background:var(--red);width:0;transition:width 1.1s .3s}
+.slide.in .fb2{width:var(--w)}
+.mt{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mut);font-weight:600}
+.mb{flex:1;height:10px;border:2px solid var(--ink);background:var(--pa)}
+.mb i{display:block;height:100%;width:0;background:var(--red);transition:width 1.2s .5s}
+.slide.in .mb i{width:var(--w)}
+.row .ds{grid-column:2;font-size:14px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-weight:700;font-size:14px;cursor:pointer;background:var(--card);color:var(--ink);border:2px solid var(--ink);padding:6px 12px;transition:background .2s,color .2s}
+.chip:hover,.chip.on{background:var(--red);color:#fff}
+.say{min-height:48px;border:2px dashed var(--red);padding:10px 14px;font-weight:600}
+.flow .st{display:grid;grid-template-columns:1fr minmax(120px,190px);gap:10px;align-items:stretch}
+.yes{background:var(--red);color:#fff;padding:10px 14px;display:flex;flex-direction:column;justify-content:center}
+.yes b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:26px;text-transform:uppercase;line-height:1.05}
+.yes.G{background:#34302e}.yes.H{background:var(--ok)}
+.yes span{font-size:13px;font-weight:600}
+.arr{text-align:center;font-weight:800;color:var(--mut);font-size:14px;padding:4px 0}
+.qh{display:flex;justify-content:space-between;font-weight:800;font-size:15px}
+.grid{display:flex;flex-wrap:wrap;gap:4px}
+.grid u{width:14px;height:14px;border:1.5px solid var(--ink);background:var(--card);text-decoration:none}
+.grid u.cur{background:var(--ink)}.grid u.ok{background:var(--ok);border-color:var(--ok)}.grid u.no{background:var(--no);border-color:var(--no)}
+.qq{font-size:clamp(18px,3vw,23px);font-weight:800;line-height:1.4}
+.bl{display:inline-block;min-width:70px;border-bottom:3px solid var(--red);margin:0 4px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.opt{font:inherit;font-weight:700;font-size:17px;text-align:left;cursor:pointer;background:var(--card);color:var(--ink);border:2px solid var(--ink);padding:12px 14px;display:flex;gap:10px;align-items:center;transition:transform .15s,box-shadow .15s}
+.opt em{font-style:normal;font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--red);font-size:20px}
+.opt:hover:not(:disabled){transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.opt.ok{background:var(--okbg);border-color:var(--ok);color:var(--ok);animation:pop .35s}
+.opt.no{background:var(--nobg);border-color:var(--no);color:var(--no);animation:shk .35s}
+.opt:disabled{cursor:default}
+@keyframes pop{50%{transform:scale(1.04)}}@keyframes shk{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.fb{border:2px solid var(--ink);background:var(--card);padding:12px 14px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;animation:pop .35s}
+.fb.ok{border-color:var(--ok)}.fb.no{border-color:var(--no)}
+.fb[hidden]{display:none}
+.score{font-family:Anton,Impact,sans-serif;font-size:84px;color:var(--red);line-height:1}
+.tr{display:grid;gap:8px;background:var(--card);border:2px solid var(--ink);padding:12px 14px}
+.tr input{font:inherit;font-weight:600;padding:9px 12px;border:2px solid var(--ink);background:var(--pa);color:var(--ink);width:100%}
+.tr .res{font-size:15px;font-weight:600}
+.tr.ok{border-color:var(--ok)}.tr.no{border-color:var(--no)}
+#nav{position:fixed;z-index:5;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);display:flex;justify-content:center;align-items:center;gap:10px;padding:0 12px}
+.nb{width:44px;height:44px;border:2px solid var(--ink);cursor:pointer;background:var(--card);color:var(--ink);font-size:22px;font-weight:800}
+.nb:hover:not(:disabled){background:var(--red);color:#fff}.nb:disabled{opacity:.35;cursor:default}
+#dots{display:flex;gap:6px;background:var(--card);border:2px solid var(--ink);padding:14px 12px}
+.dot{width:9px;height:9px;border:1.5px solid var(--ink);padding:0;background:transparent;cursor:pointer;transition:width .3s,background .3s}
+.dot.on{width:26px;background:var(--red);border-color:var(--red)}
+#top{position:fixed;z-index:5;top:calc(env(safe-area-inset-top,0px) + 10px);left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+#top b{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--red);letter-spacing:.12em;font-size:17px}
+#snd{pointer-events:auto;font:inherit;font-weight:800;font-size:13px;cursor:pointer;background:var(--card);color:var(--ink);border:2px solid var(--ink);padding:4px 10px}
+#bar{position:fixed;z-index:6;left:0;top:0;height:5px;width:100%;transform-origin:left;transform:scaleX(0);background:var(--red)}
+@media(max-width:600px){.row{grid-template-columns:1fr}.row .ds{grid-column:1}.t2 .r{grid-template-columns:1fr;gap:2px}.flow .st{grid-template-columns:1fr}.sun{width:60vw}}
+@media(prefers-reduced-motion:reduce){.petal,.fl svg{animation:none}.slide .a,.slide.in .ti,.slide.in .stamp{animation:none;transition:none;opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><filter id="rough"><feTurbulence baseFrequency=".05" numOctaves="2" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="2.5"/></filter><symbol id="fw" viewBox="0 0 100 100"><g fill="currentColor"><ellipse id="pt" cx="50" cy="24" rx="15" ry="23"/><use href="#pt" transform="rotate(72 50 50)"/><use href="#pt" transform="rotate(144 50 50)"/><use href="#pt" transform="rotate(216 50 50)"/><use href="#pt" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="7" fill="#d3382c"/></symbol></defs></svg>
+<div class="px sun" data-k="-80"></div>
+<div class="px fl" data-k="-160"><svg viewBox="0 0 100 100"><use href="#fw"/></svg></div>
+<div class="px fl b" data-k="-260"><svg viewBox="0 0 100 100"><use href="#fw"/></svg></div>
+<div class="px wv" data-k="-60"></div>
+<div id="bar"></div>
+<div id="top"><b>FUTURE</b><button id="snd" aria-pressed="true">Âm thanh: bật</button></div>
+
+<main id="deck">
+
+<section class="slide"><div class="wrap mid">
+<div class="a"><div class="vt" style="display:none"></div></div>
+<h1 class="ti">Future<br>Tenses</h1>
+<p class="lead a" style="font-weight:600">Chuyên đề các thì tương lai: bản chất, cấu trúc, và cách phân biệt Will, Be going to với Hiện tại tiếp diễn.</p>
+<div class="a" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" onclick="go(1)">Bắt đầu học</button><span class="tag">Vuốt ngang hoặc dùng phím ← →</span></div>
+</div></section>
+
+<section class="slide"><div class="wrap">
+<div class="hd"><div class="vt">FUTURE SIMPLE</div><div><h2 class="ti">Will</h2><p>Tương lai đơn: hành động sẽ xảy ra mà KHÔNG CÓ KẾ HOẠCH TRƯỚC, mang tính bột phát, chủ quan hoặc quyết định ngay lúc nói.</p></div></div>
+<div class="cds">
+<div class="cd a"><h3>Quyết định nảy sinh ngay lúc nói</h3><p>Không hề có dự định từ trước.</p><div class="ex">Đang ngồi thì chuông điện thoại reo: I will answer it.<small>Tôi sẽ nghe máy.</small></div></div>
+<div class="cd a"><h3>Dự đoán KHÔNG có căn cứ rõ ràng</h3><p>Dựa vào cảm nhận cá nhân, đi kèm think, hope, perhaps…</p><div class="ex">I think it will rain tomorrow.<small>Tôi nghĩ mai trời sẽ mưa.</small></div></div>
+<div class="cd a"><h3>Lời hứa, lời đe dọa, lời cảnh báo</h3><p>Dùng will (phủ định: won’t).</p><div class="ex">I promise I won’t tell anyone.<small>Tôi hứa sẽ không kể cho ai nghe đâu.</small></div></div>
+<div class="cd a"><h3>Lời đề nghị giúp đỡ, yêu cầu</h3><p>Hỏi nhờ hoặc đề nghị giúp ngay lúc nói.</p><div class="ex">Will you open the door for me?<small>Bạn mở cửa giúp tôi được không?</small></div></div>
+</div></div></section>
+
+<section class="slide"><div class="wrap">
+<div class="hd"><div class="vt">STRUCTURE</div><div><h2 class="ti sm">Cấu trúc của Will</h2><p>Công thức ba thể và các dấu hiệu nhận biết.</p></div></div>
+<div class="t2 a"><div class="r"><span>Thể</span><span>Công thức</span><span>Ví dụ</span></div>
+<div class="r"><b>Khẳng định (+)</b><span>S + will + V (nguyên mẫu)</span><span>I will help you with your project.</span></div>
+<div class="r"><b>Phủ định (−)</b><span>S + will NOT + V (will not = won’t)</span><span>She won’t go to the party tonight.</span></div>
+<div class="r"><b>Nghi vấn (?)</b><span>Will + S + V (nguyên mẫu)?</span><span>Will they win the match?</span></div></div>
+<div class="cds">
+<div class="cd a"><h3>Quan điểm, phỏng đoán</h3><span class="tag">think (nghĩ)</span><span class="tag">hope (hi vọng)</span><span class="tag">believe (tin rằng)</span><span class="tag">expect (mong đợi)</span><span class="tag">promise (hứa)</span><span class="tag">probably, perhaps, maybe (có lẽ)</span></div>
+<div class="cd a"><h3>Trạng từ thời gian tương lai</h3><span class="tag">tomorrow (ngày mai)</span><span class="tag">next week/month/year (tuần/tháng/năm tới)</span><span class="tag">in + khoảng thời gian (in 2 days: trong 2 ngày nữa)</span></div>
+</div></div></section>
+
+<section class="slide"><div class="wrap">
+<div class="hd"><div class="vt">3 WAYS</div><div><h2 class="ti sm">So sánh 3 cách</h2><p>Quyết định tức thời (Will), kế hoạch hoặc dự định (Be going to), lịch trình đã sắp xếp cố định (Hiện tại tiếp diễn).</p></div></div>
+<div class="cds">
+<div class="cd rd a"><h3>Will + V</h3><p><b>1. Quyết định tức thời:</b> nảy sinh ngay lúc nói, không hề chuẩn bị.</p><p style="margin-top:6px"><b>2. Dự đoán không căn cứ:</b> dựa trên quan điểm cá nhân (I think, I hope…).</p><div class="ex">‘I’m thirsty.’ – ‘I will get you some water.’<small>Giờ mới biết bạn khát nên đi lấy nước.</small></div><div class="ex">I think it will rain tomorrow.</div></div>
+<div class="cd rd a"><h3>Be going to + V</h3><p><b>1. Dự định, ý định:</b> đã lên kế hoạch từ trước, nhưng có thể chưa sắp xếp cụ thể.</p><p style="margin-top:6px"><b>2. Dự đoán CÓ CĂN CỨ:</b> có dấu hiệu rõ ràng ở hiện tại.</p><div class="ex">I am going to visit Paris next year.<small>Dự định vậy, chưa mua vé.</small></div><div class="ex">Look at those black clouds! It is going to rain.<small>Thấy mây đen nên đoán mưa.</small></div></div>
+<div class="cd rd a"><h3>Am/Is/Are + V-ing</h3><p><b>Lịch trình cố định, chắc chắn xảy ra:</b> đã lên kế hoạch chi tiết, có thời gian, địa điểm, mua vé, hoặc hẹn người khác. Tỷ lệ xảy ra rất cao (99%).</p><div class="ex">I am flying to Paris tomorrow morning.<small>Đã mua vé máy bay, giờ bay, mọi thứ đã sẵn sàng.</small></div></div>
+</div></div></section>
+
+<section class="slide"><div class="wrap">
+<div class="hd"><div class="vt">ILLUSTRATED</div><div><h2 class="ti sm">Minh họa so sánh</h2><p>Cùng một chuyến đi Paris, nhưng mức độ chuẩn bị càng nhiều thì càng chắc chắn. Bấm tình huống bên dưới để xem thuộc loại nào.</p></div></div>
+<div class="lg a"><span><i class="d1"></i>thời điểm quyết định</span><span><i class="d3"></i>hiện tại (NOW)</span><span><i class="d2"></i>sự việc xảy ra</span><span>Độ chắc chắn chỉ là mức minh họa tương đối</span></div>
+<div id="rows" class="wrap" style="gap:12px"></div>
+<div class="chips a" id="chips"></div>
+<div class="say a" id="say">Chọn một tình huống ở trên để xem lời giải thích.</div>
+</div></section>
+
+<section class="slide"><div class="wrap">
+<div class="hd"><div class="vt">DECISION</div><div><h2 class="ti sm">Chọn thì nào?</h2><p>Hỏi lần lượt ba câu để chọn đúng cách diễn đạt tương lai.</p></div></div>
+<div class="flow">
+<div class="st a"><div class="cd"><h3>Câu hỏi đầu tiên</h3><p>Quyết định nảy ra ngay lúc nói, hoặc chỉ là ý kiến cá nhân (think, hope, perhaps, promise…)? Lời hứa, lời đề nghị giúp đỡ và lời nhờ vả cũng thuộc nhóm này.</p></div><div class="yes"><span>Có →</span><b>Will</b><span>will + V</span></div></div>
+<div class="arr a">Không ↓</div>
+<div class="st a"><div class="cd"><h3>Câu hỏi thứ hai</h3><p>Đã chốt chi tiết chưa: có giờ, địa điểm, đã mua vé hoặc hẹn người khác?</p></div><div class="yes H"><span>Có →</span><b>HTTD</b><span>am/is/are + V-ing</span></div></div>
+<div class="arr a">Không ↓</div>
+<div class="st a"><div class="cd"><h3>Câu hỏi thứ ba</h3><p>Đã có dự định từ trước, hoặc đang thấy dấu hiệu rõ ràng ngay lúc này (mây đen, kẹt xe, động cơ kêu lạ)?</p></div><div class="yes G"><span>Có →</span><b>Be going to</b><span>am/is/are going to + V</span></div></div>
+</div></div></section>
+
+<section class="slide"><div class="wrap" id="mini"></div></section>
+<section class="slide"><div class="wrap" id="q40"></div></section>
+<section class="slide"><div class="wrap">
+<div class="hd"><div class="vt">TRANSLATE</div><div><h2 class="ti sm">Dịch thuật</h2><p>Dùng S + will + V để dịch 10 câu sang tiếng Anh. Gõ câu của bạn rồi bấm Kiểm tra (Enter).</p></div></div>
+<div id="trs" class="wrap" style="gap:10px"></div>
+</div></section>
+</main>
+
+<div id="nav"><button class="nb" id="pv" aria-label="Trang trước">‹</button><div id="dots"></div><button class="nb" id="nx" aria-label="Trang sau">›</button></div>
+
+<script>
+const R=a=>a[Math.random()*a.length|0],sh=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+/* Âm thanh: chỉ khi chọn đúng hoặc sai */
+let AC,mute=false;const sb=document.getElementById("snd");
+sb.onclick=()=>{mute=!mute;sb.textContent="Âm thanh: "+(mute?"tắt":"bật");sb.setAttribute("aria-pressed",!mute)};
+function snd(ok){if(mute)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();const t=AC.currentTime;(ok?[[660,0],[880,.12],[1175,.24]]:[[200,0],[140,.16]]).forEach(([f,d])=>{const o=AC.createOscillator(),g=AC.createGain();o.type=ok?"sine":"sawtooth";o.frequency.value=f;g.gain.setValueAtTime(.0001,t+d);g.gain.exponentialRampToValueAtTime(.18,t+d+.02);g.gain.exponentialRampToValueAtTime(.0001,t+d+(ok?.22:.3));o.connect(g).connect(AC.destination);o.start(t+d);o.stop(t+d+.35)})}catch(e){}}
+/* Cánh hoa rơi */
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches)for(let i=0;i<14;i++){const p=document.createElement("i");p.className="petal";p.style.cssText=`left:${Math.random()*100}vw;--dx:${Math.random()*160-80}px;animation-duration:${12+Math.random()*12}s;animation-delay:${-Math.random()*20}s;transform:scale(${.6+Math.random()*.8})`;document.body.appendChild(p)}
+/* Điều hướng */
+const deck=document.getElementById("deck"),S=[...deck.children],dots=document.getElementById("dots"),pv=document.getElementById("pv"),nx=document.getElementById("nx"),bar=document.getElementById("bar");let cur=-1;
+S.forEach((s,i)=>{s.querySelectorAll(".a").forEach((e,j)=>e.style.setProperty("--i",j));const d=document.createElement("button");d.className="dot";d.setAttribute("aria-label","Trang "+(i+1));d.onclick=()=>go(i);dots.appendChild(d)});
+function go(i){deck.scrollTo({left:Math.max(0,Math.min(S.length-1,i))*deck.clientWidth,behavior:"smooth"})}
+function upd(){const p=deck.scrollLeft/deck.clientWidth,i=Math.round(p);bar.style.transform=`scaleX(${p/(S.length-1)})`;document.querySelectorAll(".px").forEach(e=>e.style.transform=(e.classList.contains("sun")?"rotate(-35deg) ":"")+`translateX(${p*e.dataset.k}px)`);
+if(i!==cur){cur=i;S.forEach((s,j)=>s.classList.toggle("in",j===i));[...dots.children].forEach((d,j)=>d.classList.toggle("on",j===i));pv.disabled=i===0;nx.disabled=i===S.length-1}}
+deck.addEventListener("scroll",upd,{passive:true});addEventListener("resize",()=>{deck.scrollLeft=cur*deck.clientWidth});
+pv.onclick=()=>go(cur-1);nx.onclick=()=>go(cur+1);
+addEventListener("keydown",e=>{if(/INPUT|TEXTAREA/.test(e.target.tagName))return;if(e.key==="ArrowRight")go(cur+1);if(e.key==="ArrowLeft")go(cur-1)});upd();
+
+/* Minh họa so sánh */
+const RW=[["w","Will","will + V","I think it will rain tomorrow.","Ý kiến cá nhân hoặc quyết định ngay lúc nói: chưa có chuẩn bị gì.",50,45],["G","Be going to","am/is/are going to + V","I am going to visit Paris next year.","Đã có dự định từ trước, chưa sắp xếp cụ thể (chưa mua vé).",30,70],["H","Hiện tại tiếp diễn","am/is/are + V-ing","I am flying to Paris tomorrow morning.","Đã mua vé, có giờ bay, mọi thứ sẵn sàng: gần như chắc chắn (99%).",12,99]];
+document.getElementById("rows").innerHTML=RW.map(r=>`<div class="row a" data-k="${r[0]}"><div class="rh"><b>${r[1]}</b><span>${r[2]}</span></div><div><div class="tl"><i class="fb2" style="left:${r[5]}%;--w:${92-r[5]}%"></i><i class="now"></i><i class="dec" style="left:${r[5]}%"></i><i class="evt"></i></div><div class="mt"><span>Chắc chắn</span><div class="mb"><i style="--w:${r[6]}%"></i></div></div></div><div class="ds"><b style="color:var(--ink)">${r[3]}</b><br>${r[4]}</div></div>`).join("");
+const SC=[["Chuông điện thoại vừa reo","w","Quyết định nảy ra tức thời, chưa chuẩn bị gì: dùng will (I will answer it)."],["Mây đen kéo kín trời","G","Có dấu hiệu rõ ràng ở hiện tại: dùng be going to (It is going to rain)."],["Đã mua vé máy bay, có giờ bay","H","Đã sắp xếp chi tiết, rất chắc chắn: dùng hiện tại tiếp diễn (I am flying tomorrow morning)."],["Tôi nghĩ mai trời sẽ mưa","w","Ý kiến cá nhân, không có căn cứ: dùng will (I think it will rain)."],["Quyết định đi Paris năm sau, chưa mua vé","G","Có dự định từ trước nhưng chưa sắp xếp cụ thể: dùng be going to."],["Hẹn nha sĩ lúc 10 giờ sáng mai","H","Đã đặt lịch cụ thể: dùng hiện tại tiếp diễn (I am seeing the dentist tomorrow at 10)."]];
+const chips=document.getElementById("chips");
+SC.forEach(s=>{const b=document.createElement("button");b.className="chip";b.textContent=s[0];b.onclick=()=>{chips.querySelectorAll(".chip").forEach(c=>c.classList.remove("on"));b.classList.add("on");document.querySelectorAll(".row").forEach(r=>r.classList.toggle("hit",r.dataset.k.toLowerCase()===s[1].toLowerCase()));document.getElementById("say").innerHTML=`<span class="tg ${s[1]}">${s[1]=="w"?"Will":s[1]=="G"?"Be going to":"HTTD"}</span>${s[2]}`};chips.appendChild(b)});
+
+/* Bộ làm quiz */
+const TL={W:"Will",G:"Be going to",H:"Hiện tại tiếp diễn"};
+const parse=s=>s.trim().split("\n").map((l,i)=>{const p=l.split("|");return{id:i+1,t:p[0],o:p.slice(1,5),a:"ABCD".indexOf(p[5]),n:`<span class="tg ${p[6]}">${TL[p[6]]}</span>${p[7]}.`}});
+function mkQuiz(el,items,title,kr,sub){let L,i,sc,res;
+function start(s){L=s?sh(items):items.slice();i=0;sc=0;res=[];draw()}
+const hd=`<div class="hd"><div class="vt">QUIZ</div><div><h2 class="ti sm">${title}</h2><p>${sub}</p></div></div>`;
+function draw(){const q=L[i];el.innerHTML=`${hd}<div class="qh"><span>Câu ${i+1}/${L.length}</span><span>Đúng ${sc}</span></div><div class="grid">${L.map((_,k)=>`<u class="${res[k]||(k==i?"cur":"")}"></u>`).join("")}</div><div class="qq">${q.t.replace(" B: ","<br>B: ").replace("_____",'<span class="bl"></span>')}</div><div class="opts">${q.o.map((x,k)=>`<button class="opt" data-k="${k}"><em>${"ABCD"[k]}</em>${x}</button>`).join("")}</div><div class="fb" hidden></div>`;
+el.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{const k=+b.dataset.k,ok=k===q.a;el.querySelectorAll(".opt").forEach(x=>{x.disabled=true;if(+x.dataset.k===q.a)x.classList.add("ok")});if(!ok)b.classList.add("no");if(ok)sc++;res[i]=ok?"ok":"no";snd(ok);
+const f=el.querySelector(".fb");f.hidden=false;f.className="fb "+(ok?"ok":"no");f.innerHTML=`<div><b style="color:var(--${ok?"ok":"no"})">${ok?"Chính xác!":"Chưa đúng."}</b> Đáp án: <b>${q.o[q.a]}</b></div><div>${q.n}</div><button class="btn">${i+1<L.length?"Câu tiếp theo":"Xem kết quả"}</button>`;
+f.querySelector(".btn").onclick=()=>{i++;i<L.length?draw():end()};f.scrollIntoView({block:"nearest",behavior:"smooth"})})}
+function end(){const bad=L.filter((_,k)=>res[k]==="no").map(q=>q.id);el.innerHTML=`${hd}<div class="cd"><div class="score">${sc}/${L.length}</div><h3 style="margin:8px 0 4px">${sc===L.length?"Hoàn hảo!":sc>=L.length*.8?"Rất tốt!":sc>=L.length*.5?"Khá ổn, ôn thêm chút nữa nhé.":"Xem lại các trang trước và thử lại nhé."}</h3><p>${bad.length?"Cần xem lại câu: "+bad.sort((a,b)=>a-b).join(", ")+".":"Bạn không sai câu nào."}</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="btn" id="r1">Làm lại</button><button class="btn g" id="r2">Làm lại, trộn thứ tự câu</button></div></div>`;el.querySelector("#r1").onclick=()=>start(0);el.querySelector("#r2").onclick=()=>start(1)}
+start(0)}
+mkQuiz(document.getElementById("mini"),parse(`Look out! You (drop) _____ the glasses!|will drop|are going to drop|are dropping|drop|B|G|nhìn thấy sắp làm rơi nên là dự đoán có căn cứ ở hiện tại
+I can’t meet you tonight. I (have) _____ dinner with my parents. We booked the restaurant yesterday.|will have|am having|am going to have|have|B|H|đã đặt bàn nhà hàng nên kế hoạch đã chốt chắc chắn
+A: ‘We don’t have any sugar left.’ B: ‘Oh, I (go) _____ to the supermarket and buy some.’|will go|am going to go|am going|go|A|W|quyết định đưa ra ngay lúc nói khi vừa biết hết đường`),"Mini-test","","Bài tập vận dụng nhanh: chọn dạng đúng của động từ trong ngoặc.");
+mkQuiz(document.getElementById("q40"),parse(`‘We don’t have any bread.’ – ‘Oh, really? I _____ some right now.’|buy|am buying|will buy|am going to buy|C|W|vừa biết hết bánh mì nên quyết định ngay lúc nói
+Next Saturday at 8 PM, we _____ a party. Do you want to come?|are having|have|will have|are going to having|A|H|bữa tiệc đã sắp xếp, có giờ cố định
+Look at those dark clouds! It _____ heavily.|is raining|rains|will rain|is going to rain|D|G|nhìn thấy mây đen là dấu hiệu rõ ràng ở hiện tại
+‘The phone is ringing!’ – ‘I _____ it!’|answer|am going to answer|will answer|am answering|C|W|quyết định tức thời khi vừa nghe chuông
+She _____ her dentist tomorrow at 10 AM. She made the appointment last week.|will see|sees|is seeing|is going to see|C|H|đã đặt lịch hẹn từ tuần trước, có giờ cụ thể
+I promise I _____ anyone your secret.|not tell|won’t tell|am not going to tell|am not telling|B|W|lời hứa (promise) dùng will, phủ định là won’t
+We _____ to Paris next weekend. We’ve just bought the tickets.|will fly|are flying|fly|are going to flying|B|H|đã mua vé nên chuyến bay đã sắp xếp chắc chắn
+‘It’s very hot in here.’ – ‘I _____ the window for you.’|am going to open|will open|open|am opening|B|W|đề nghị giúp đỡ ngay lúc nói
+Watch out! You _____ that vase!|are going to drop|are dropping|will drop|drop|A|G|cảnh báo khi thấy rõ sắp làm rơi, dấu hiệu ở hiện tại
+I hope that people _____ a cure for cancer in the future.|will find|are finding|are going to find|find|A|W|hope là dấu hiệu dự đoán theo quan điểm cá nhân
+‘I can’t carry these heavy bags.’ – ‘Don’t worry, I _____ you.’|am helping|help|will help|am going to help|C|W|đề nghị giúp đỡ ngay lúc nói
+My brother _____ a new job on Monday morning. He signed the contract yesterday.|is starting|will start|starts|is going to start|A|H|đã ký hợp đồng nên thời gian đã cố định
+What _____ you _____ when you grow up?|will / do|do / do|are / doing|are / going to do|D|G|hỏi về dự định. Lưu ý: “will / do” cũng gặp trong đời sống, nhưng đề chọn dạng chỉ dự định
+A: ‘Why are you holding a bucket of water?’ B: ‘I _____ the car.’|will wash|am washing|wash|am going to wash|D|G|đã có ý định từ trước, đang cầm xô nước chuẩn bị rửa xe
+‘Did you remember to email Sarah?’ – ‘Oh no, I forgot. I _____ it right now.’|am doing|do|will do|am going to do|C|W|vừa nhớ ra nên quyết định ngay lúc nói
+Perhaps we _____ to the beach next weekend.|are going|go|will go|are going to go|C|W|perhaps là từ chỉ phỏng đoán
+He _____ his house next month. He has already found a buyer.|sells|is selling|is going to sell|will sell|B|H|đã tìm được người mua nên việc bán nhà đã được sắp xếp
+In 2050, robots _____ most of the housework. I’m quite sure.|do|will do|are doing|are going to do|B|W|dự đoán xa trong tương lai theo quan điểm cá nhân
+‘Are you ready to order?’ – ‘Yes, I _____ the steak, please.’|have|am going to have|am having|will have|D|W|quyết định ngay lúc gọi món
+Look at the traffic! We _____ late for the meeting.|will be|are going to be|be|are being|B|G|nhìn thấy kẹt xe là dấu hiệu rõ ràng
+Don’t lift that heavy box! You _____ your back.|will hurt|hurt|are going to hurt|are hurting|A|W|lời cảnh báo dùng will. Lưu ý: “are going to hurt” cũng có thể dùng khi thấy dấu hiệu rõ
+What _____ you _____ tonight? Let’s hang out!|are / doing|are / going to do|will / do|do / do|A|H|hỏi về kế hoạch đã sắp xếp cho tối nay
+I’m sure she _____ the exam easily.|is going to pass|passes|will pass|is passing|C|W|I’m sure là dự đoán theo cảm nhận cá nhân
+A: ‘I’ve decided to repaint this room.’ B: ‘Oh, really? What color _____ you _____ it?’|will / paint|are / going to paint|do / paint|are / painting|B|G|đã quyết định từ trước nên hỏi về dự định
+I _____ you the money, but you must pay me back next week.|am going to lend|am lending|lend|will lend|D|W|lời đề nghị giúp đỡ ngay lúc nói
+‘I have a headache.’ – ‘Wait here. I _____ you some aspirin.’|get|am going to get|will get|am getting|C|W|đề nghị giúp đỡ ngay khi vừa nghe
+Next month, she _____ a speech at the conference. Her name is on the schedule.|is giving|is going to give|will give|gives|A|H|tên đã có trong lịch trình nên đã sắp xếp
+Maybe they _____ late because of the heavy traffic.|are going to arrive|will arrive|are arriving|arrive|B|W|maybe là từ chỉ phỏng đoán
+We _____ a meeting tomorrow morning at 9. The boss confirmed it.|have|will have|are having|are going to have|C|H|sếp đã xác nhận nên đã sắp xếp
+_____ you _____ the door for me, please?|Do / open|Are / going to open|Will / open|Are / opening|C|W|lời nhờ vả, yêu cầu dùng Will you…?
+I believe humans _____ to other planets in the next century.|travel|are going to travel|are travelling|will travel|D|W|believe là dấu hiệu quan điểm cá nhân
+‘What would you like to drink?’ – ‘I _____ an orange juice.’|will have|have|am having|am going to have|A|W|quyết định ngay lúc gọi đồ uống
+Look at my diary! I _____ Tom on Friday afternoon.|am meeting|am going to meet|meet|will meet|A|H|đã ghi trong nhật ký nên là lịch hẹn cụ thể
+The engine is making a strange noise. The car _____ down.|breaks|will break|is going to break|is breaking|C|G|tiếng động lạ là dấu hiệu rõ ràng ở hiện tại
+The mechanic _____ my car tomorrow. We agreed on the price.|fixes|is fixing|will fix|is going to fix|B|H|đã thỏa thuận giá nên đã sắp xếp
+‘I lost my pen.’ – ‘Here, I _____ you mine.’|lend|will lend|am lending|am going to lend|B|W|đề nghị giúp đỡ ngay lúc nói
+Look at the boy on the wall! He _____.|will fall|is going to fall|falls|is falling|B|G|nhìn thấy tình huống nguy hiểm là dấu hiệu rõ ràng
+They _____ their 10th anniversary next Saturday at the Hilton Hotel.|are celebrating|will celebrate|celebrate|are going to celebrate|A|H|có thời gian và địa điểm cụ thể
+I _____ him the truth. I promise!|will tell|tell|am going to tell|am telling|A|W|lời hứa (promise) dùng will
+I’ve bought some wood. I _____ a doghouse for my puppy.|am going to build|will build|am building|build|A|G|đã mua gỗ nên có ý định từ trước`),"Trắc nghiệm 40 câu","","Phân tích ngữ cảnh để chọn Will, Be going to hay Hiện tại tiếp diễn. Chọn xong sẽ hiện đáp án và giải thích.");
+
+/* Dịch thuật */
+const TR=[["Tôi sẽ giúp bạn làm bài tập.","I will help you with your homework.","Lời đề nghị giúp đỡ nên dùng will"],["Ngày mai trời sẽ mưa.","It will rain tomorrow.","Dự đoán chủ quan, có dấu hiệu thời gian tomorrow"],["Tôi nghĩ cô ấy sẽ không đến bữa tiệc.","I think she won’t come to the party.","think đi với will; phủ định là won’t (will not)"],["Bạn sẽ mở cửa sổ giúp tôi chứ?","Will you open the window for me?","Lời nhờ vả: Will + S + V?"],["Đừng lo, tôi sẽ không nói cho ai biết đâu.","Don’t worry, I won’t tell anyone.","Lời hứa nên dùng won’t"],["Chúng tôi sẽ đi du lịch Nhật Bản vào năm tới.","We will travel to Japan next year.","next year là dấu hiệu thời gian tương lai"],["Tôi hi vọng bạn sẽ thích món quà này.","I hope you will like this gift.","hope đi với will"],["Điện thoại đang reo, tôi sẽ nghe máy.","The phone is ringing, I will answer it.","Quyết định tức thời ngay lúc nói"],["Họ sẽ xây một cây cầu mới ở đây.","They will build a new bridge here.","Sự việc sẽ xảy ra trong tương lai: S + will + V"],["Anh ấy sẽ trở thành một bác sĩ giỏi trong tương lai.","He will become a good doctor in the future.","will + become, in the future là dấu hiệu tương lai"]];
+const nz=s=>s.toLowerCase().replace(/[’‘]/g,"'").replace(/will not/g,"won't").replace(/[.,?!]/g,"").replace(/\s+/g," ").trim();
+const trs=document.getElementById("trs");
+TR.forEach((t,k)=>{const d=document.createElement("div");d.className="tr";d.innerHTML=`<b>Câu ${k+1}. ${t[0]}</b><input type="text" placeholder="Viết câu tiếng Anh…" aria-label="Câu ${k+1}" autocomplete="off" spellcheck="false"><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn">Kiểm tra</button><span class="res"></span></div>`;
+const inp=d.querySelector("input"),res=d.querySelector(".res");
+const chk=()=>{if(!inp.value.trim())return;const ok=nz(inp.value)===nz(t[1]);snd(ok);d.className="tr "+(ok?"ok":"no");res.innerHTML=ok?`<b style="color:var(--ok)">Chính xác!</b> ${t[2]}.`:`<b style="color:var(--no)">Chưa khớp đáp án mẫu.</b> Đáp án: <b>${t[1]}</b>. ${t[2]}. Có thể bạn dịch đúng theo cách khác, hãy tự so sánh nhé.`};
+d.querySelector(".btn").onclick=chk;inp.onkeydown=e=>{if(e.key==="Enter")chk()};trs.appendChild(d)});
+</script>
+</body>
+</html>
